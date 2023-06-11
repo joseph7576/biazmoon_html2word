@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 psg.theme('DarkBlue')
 layout = [[psg.T("")],
           [psg.T("-"), psg.Text("Please choose your downloaded biazmoon's question html file: ")],
-          [psg.T(""), psg.Input(), psg.FileBrowse(key="-htmlfile-"), psg.Button("Convert")],
+          [psg.T(""), psg.Input(), psg.FileBrowse(key="-htmlfile-", file_types=(('HTML Files', '*.html'),)), psg.Button("Convert")],
           [psg.T(""), psg.Quit("Exit")]]
 window = psg.Window('Biazmoon html2word', layout, size=(550,150))
 

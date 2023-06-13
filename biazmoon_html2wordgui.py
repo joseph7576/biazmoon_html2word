@@ -63,12 +63,13 @@ def create_word_doc(file, directory):
     document.save(filepath)
 
 
-while True:
-    event, values = window.read()
-    if event == psg.WIN_CLOSED or event=="Exit" or event=="Quit":
-        break
-    elif event == "Convert":
-        directory = psg.popup_get_folder("Choose a directory to save your docx file.", title='Where to save?')
-        create_word_doc(values['-htmlfile-'], directory)
-        psg.popup("needtofix.docx has created. Now go and fix that doc.", title=':D')
-        open_file_explorer(directory)
+if __name__ == '__main__':
+    while True:
+        event, values = window.read()
+        if event == psg.WIN_CLOSED or event=="Exit" or event=="Quit":
+            break
+        elif event == "Convert":
+            directory = psg.popup_get_folder("Choose a directory to save your docx file.", title='Where to save?')
+            create_word_doc(values['-htmlfile-'], directory)
+            psg.popup("needtofix.docx has created. Now go and fix that doc.", title=':D')
+            open_file_explorer(directory)

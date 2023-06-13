@@ -14,7 +14,7 @@ window = psg.Window('Biazmoon html2word', layout, size=(550,150))
 def create_word_doc(file, directory):
     document = Document()
     
-    with open(file) as fp: # you should replace your file with mine
+    with open(file, encoding='utf8') as fp: # you should replace your file with mine
         soup = BeautifulSoup(fp, 'html.parser')
         question_and_choices_list  = list(soup.find_all(['p', 'span']))
 
